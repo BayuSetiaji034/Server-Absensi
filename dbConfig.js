@@ -1,25 +1,25 @@
-// src/dbConfig.js
-
 const { Pool } = require('pg');
 const nodemailer = require('nodemailer');
-require('dotenv').config(); // Biar bisa baca .env di lokal (opsional tapi bagus)
+require('dotenv').config(); // Opsional, buat baca .env di lokal
 
 // 1. Konfigurasi Database (PINTER)
-const isProduction = process.env.NODE_ENV === 'production';
-
-const connectionString = process.env.DATABASE_URL; // Ambil dari Render
+const connectionString = process.env.DATABASE_URL; // Ambil dari Render/Supabase
 
 const pool = new Pool({
+  // Kalo ada connectionString (di Render), pake itu.
+  // Kalo nggak ada (di laptop), pake undefined biar dia baca config manual di bawah.
   connectionString: connectionString ? connectionString : undefined,
-  // Kalo gak ada DATABASE_URL (lagi di lokal), pake config manual ini:
+  
+  // Config manual (Cuma dipake kalo connectionString kosong/lokal)
   ...(connectionString ? {} : {
     user: 'postgres',
     host: 'localhost',
     database: 'db_absensi_tk',
-    password: 'MonyetLaper99', // Ganti password lokal lo
+    password: 'MonyetLaper99', // Password lokal lo
     port: 5432,
   }),
-  // SSL wajib buat Render/Supabase, tapi dimatiin di lokal
+
+  // SSL: Wajib True buat Render/Supabase, False buat lokal
   ssl: connectionString ? { rejectUnauthorized: false } : false
 });
 
@@ -35,7 +35,6 @@ const transporter = nodemailer.createTransport({
     }
 });
 
-// 4. Ekspor
 module.exports = {
     pool,
     JWT_SECRET,
