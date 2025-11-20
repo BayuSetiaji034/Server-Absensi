@@ -27,7 +27,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 // --- Akhir Konfigurasi Multer ---
-const port = process.env.PORT || 3001; // Pake port Render, atau 3001 kalo lokal
+const port = process.env.PORT || 3000; // Pake port Render, atau 3001 kalo lokal
 
 // 3. Konfigurasi Koneksi Database (PENTING!)
 // Ini adalah 'jembatan' ke database PostgreSQL Anda.
@@ -1957,8 +1957,8 @@ app.post('/api/orangtua/lupa-password', async (req, res) => {
 });
 
 // 6. Jalankan Server
-app.listen(port, () => {
-    console.log(`Server berjalan di http://localhost:${port}`);
+app.listen(port, '0.0.0.0', () => {
+    console.log(`Server berjalan di port ${port}`);
 
     // Coba tes koneksi database saat server start
     pool.query('SELECT NOW()', (err, res) => {
