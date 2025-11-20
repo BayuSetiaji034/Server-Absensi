@@ -18,8 +18,8 @@ const pool = new Pool({
     // Konfigurasi manual cuma dipake kalo connectionString kosong (di laptop)
     ...(connectionString ? {} : {
         user: 'postgres',
-        host: 'localhost',
-        database: 'db_absensi_tk',
+        host: 'db.levhzzdhcvzmtspsiuwd.supabase.co',
+        database: 'postgres',
         password: 'MonyetLaper99', // Password laptop lo
         port: 5432,
     }),

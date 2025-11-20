@@ -33,8 +33,8 @@ const port = process.env.PORT || 3000; // Pake port Render, atau 3001 kalo lokal
 // Ini adalah 'jembatan' ke database PostgreSQL Anda.
 const pool = new Pool({
     user: 'postgres',           // <-- Ganti dengan username Postgres Anda
-    host: 'localhost',
-    database: 'db_absensi_tk',  // <-- Nama database yang tadi kita buat
+    host: 'db.levhzzdhcvzmtspsiuwd.supabase.co',
+    database: 'postgres',  // <-- Nama database yang tadi kita buat
     password: 'MonyetLaper99',   // <-- GANTI DENGAN PASSWORD ANDA
     port: 5432,                 // Port default PostgreSQL
 });
