@@ -35,6 +35,7 @@ const pool = new Pool({
     user: 'postgres.levhzzdhcvzmtspsiuwd',           // <-- Ganti dengan username Postgres Anda
     host: 'aws-1-ap-southeast-1.pooler.supabase.com',
     database: 'db-absensi-tk',  // <-- Nama database yang tadi kita buat
+    password: 'MonyetLaper99',
     port: 6543,               // Port default PostgreSQL
 });
 
