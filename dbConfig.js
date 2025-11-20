@@ -2,8 +2,7 @@ const { Pool } = require('pg');
 const nodemailer = require('nodemailer');
 require('dotenv').config(); // Opsional, buat baca .env di lokal
 
-// 1. Konfigurasi Database (PINTER)
-const connectionString = process.env.DATABASE_URL; // Ambil dari Render/Supabase
+const connectionString = "postgresql://postgres:MonyetLaper99@db.levhzzdhcvzmtspsiuwd.supabase.co:5432/postgres";
 
 const pool = new Pool({
   // Kalo ada connectionString (di Render), pake itu.
