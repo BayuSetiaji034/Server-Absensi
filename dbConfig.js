@@ -18,10 +18,11 @@ const pool = new Pool({
     // Konfigurasi manual cuma dipake kalo connectionString kosong (di laptop)
     ...(connectionString ? {} : {
         user: 'postgres',
-        host: 'db.levhzzdhcvzmtspsiuwd.supabase.co',
+        host: 'aws-1-ap-southeast-1.pooler.supabase.com',
         database: 'postgres',
         password: 'MonyetLaper99', // Password laptop lo
-        port: 5432,
+        port: 6543,
+        pool_mode: transaction,
     }),
     // SSL WAJIB buat Render/Supabase.
     // rejectUnauthorized: false penting biar Render mau connect ke Supabase

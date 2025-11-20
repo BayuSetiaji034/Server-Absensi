@@ -33,10 +33,11 @@ const port = process.env.PORT || 3000; // Pake port Render, atau 3001 kalo lokal
 // Ini adalah 'jembatan' ke database PostgreSQL Anda.
 const pool = new Pool({
     user: 'postgres',           // <-- Ganti dengan username Postgres Anda
-    host: 'db.levhzzdhcvzmtspsiuwd.supabase.co',
+    host: 'aws-1-ap-southeast-1.pooler.supabase.com',
     database: 'postgres',  // <-- Nama database yang tadi kita buat
     password: 'MonyetLaper99',   // <-- GANTI DENGAN PASSWORD ANDA
-    port: 5432,                 // Port default PostgreSQL
+    port: 6543,
+    pool_mode: transaction,                 // Port default PostgreSQL
 });
 
 const transporter = nodemailer.createTransport({
