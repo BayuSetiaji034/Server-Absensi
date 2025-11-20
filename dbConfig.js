@@ -19,7 +19,7 @@ const pool = new Pool({
     ...(connectionString ? {} : {
         user: 'postgres',
         host: 'aws-1-ap-southeast-1.pooler.supabase.com',
-        database: 'postgres',
+        database: 'db-absensi-tk',
         password: 'MonyetLaper99', // Password laptop lo
         port: 6543,
     }),
