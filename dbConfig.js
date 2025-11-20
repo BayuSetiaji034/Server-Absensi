@@ -17,7 +17,7 @@ const pool = new Pool({
     connectionString: connectionString ? connectionString : undefined,
     // Konfigurasi manual cuma dipake kalo connectionString kosong (di laptop)
     ...(connectionString ? {} : {
-        user: 'postgres',
+        user: 'postgres.levhzzdhcvzmtspsiuwd',
         host: 'aws-1-ap-southeast-1.pooler.supabase.com',
         database: 'db-absensi-tk',
         password: 'MonyetLaper99', // Password laptop lo

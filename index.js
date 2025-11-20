@@ -32,7 +32,7 @@ const port = process.env.PORT || 3000; // Pake port Render, atau 3001 kalo lokal
 // 3. Konfigurasi Koneksi Database (PENTING!)
 // Ini adalah 'jembatan' ke database PostgreSQL Anda.
 const pool = new Pool({
-    user: 'postgres',           // <-- Ganti dengan username Postgres Anda
+    user: 'postgres.levhzzdhcvzmtspsiuwd',           // <-- Ganti dengan username Postgres Anda
     host: 'aws-1-ap-southeast-1.pooler.supabase.com',
     database: 'db-absensi-tk',  // <-- Nama database yang tadi kita buat
     password: 'MonyetLaper99',   // <-- GANTI DENGAN PASSWORD ANDA
