@@ -36,8 +36,7 @@ const pool = new Pool({
     host: 'aws-1-ap-southeast-1.pooler.supabase.com',
     database: 'postgres',  // <-- Nama database yang tadi kita buat
     password: 'MonyetLaper99',   // <-- GANTI DENGAN PASSWORD ANDA
-    port: 6543,
-    pool_mode: transaction,                 // Port default PostgreSQL
+    port: 6543,               // Port default PostgreSQL
 });
 
 const transporter = nodemailer.createTransport({

@@ -22,7 +22,6 @@ const pool = new Pool({
         database: 'postgres',
         password: 'MonyetLaper99', // Password laptop lo
         port: 6543,
-        pool_mode: transaction,
     }),
     // SSL WAJIB buat Render/Supabase.
     // rejectUnauthorized: false penting biar Render mau connect ke Supabase
