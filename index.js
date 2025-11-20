@@ -27,7 +27,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 // --- Akhir Konfigurasi Multer ---
-const port = 3000; // Port server akan berjalan
+const port = process.env.PORT || 3001; // Pake port Render, atau 3001 kalo lokal
 
 // 3. Konfigurasi Koneksi Database (PENTING!)
 // Ini adalah 'jembatan' ke database PostgreSQL Anda.
