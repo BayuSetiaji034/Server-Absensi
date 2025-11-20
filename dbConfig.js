@@ -2,25 +2,30 @@ const { Pool } = require('pg');
 const nodemailer = require('nodemailer');
 require('dotenv').config(); // Opsional, buat baca .env di lokal
 
-const connectionString = "postgresql://postgres:MonyetLaper99@db.levhzzdhcvzmtspsiuwd.supabase.co:5432/postgres";
+// 1. Konfigurasi Database (PINTER)
+const connectionString = process.env.DATABASE_URL; // Ambil dari Render/Supabase
 
 const pool = new Pool({
   // Kalo ada connectionString (di Render), pake itu.
   // Kalo nggak ada (di laptop), pake undefined biar dia baca config manual di bawah.
-  connectionString: connectionString ? connectionString : undefined,
-  
+ connectionString: connectionString,
+  ssl: {
+    rejectUnauthorized: false
+  }
+  });
+
   // Config manual (Cuma dipake kalo connectionString kosong/lokal)
-  ...(connectionString ? {} : {
+  (connectionString ? {} : {
     user: 'postgres',
     host: 'localhost',
     database: 'db_absensi_tk',
     password: 'MonyetLaper99', // Password lokal lo
     port: 5432,
-  }),
+  });
 
   // SSL: Wajib True buat Render/Supabase, False buat lokal
   ssl: connectionString ? { rejectUnauthorized: false } : false
-});
+;
 
 // 2. Kunci Rahasia JWT
 const JWT_SECRET = process.env.JWT_SECRET || 'rahasia-banget-ini-jangan-disebar';
