@@ -20,7 +20,6 @@ const pool = new Pool({
         user: 'postgres.levhzzdhcvzmtspsiuwd',
         host: 'aws-1-ap-southeast-1.pooler.supabase.com',
         database: 'db-absensi-tk',
-        password: 'MonyetLaper99', // Password laptop lo
         port: 6543,
     }),
     // SSL WAJIB buat Render/Supabase.
